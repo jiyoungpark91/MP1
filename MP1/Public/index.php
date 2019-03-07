@@ -7,15 +7,31 @@
  */
 
 
-main::start();
+main::start("example.csv");
 
 class main
 {
 
-    static public function start()
+    static public function start($filename)
     {
+$records = csv::getRecords($filename);
 
-        $file = fopen("example.csv", "r");
+print_r($records);
+
+    }
+
+}
+
+
+class csv {
+
+
+
+
+    static public function getRecords($filename) {
+
+
+        $file = fopen($filename, "r");
 
         while (!feof($file)) {
 
@@ -30,6 +46,7 @@ class main
         fclose($file);
         print_r($records);
 
-    }
 
+
+    }
 }
