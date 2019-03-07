@@ -7,20 +7,29 @@
  */
 
 
-
 main::start();
 
-class main    {
+class main
+{
+
+    static public function start()
+    {
+
+        $file = fopen("example.csv", "r");
+
+        while (!feof($file)) {
 
 
-    static public function start() {
+
+            $record = fgetcsv($file);
 
 
-
-        $file = fopen("example.csv","r");
-        print_r(fgetcsv($file));
-        fclose($file);
-
+            $records[] = $record;
         }
+
+        fclose($file);
+        print_r($records);
+
+    }
 
 }
