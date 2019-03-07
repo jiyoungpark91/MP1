@@ -7,4 +7,4 @@
  */
 
 
-echo 'test';
+echo 'heroku test';
